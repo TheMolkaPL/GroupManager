@@ -1,4 +1,4 @@
-package com.programmingwizzard.channelmanager;
+package com.programmingwizzard.groupmanager;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -12,7 +12,7 @@ import java.nio.file.Files;
 
 /*
  * @author ProgrammingWizzard
- * @date 22.01.2017
+ * @date 23.01.2017
  */
 public class GsonUtils
 {

@@ -1,10 +1,13 @@
-package com.programmingwizzard.channelmanager;
+package com.programmingwizzard.groupmanager;
 
 import com.google.gson.annotations.SerializedName;
 
+import java.util.HashMap;
+import java.util.Map;
+
 /*
  * @author ProgrammingWizzard
- * @date 22.01.2017
+ * @date 23.01.2017
  */
 @SuppressWarnings("FieldCanBeLocal")
 public class Configuration
@@ -22,19 +25,18 @@ public class Configuration
     private String password = "";
 
     @SerializedName("name")
-    private String name = "BOT @ ChannelManager";
+    private String name = "BOT @ GroupManager";
 
-    @SerializedName("parent-channel-id")
-    private int parentChannelId = 3;
+    @SerializedName("channel")
+    private int channel = 2;
 
-    @SerializedName("channel-creator")
-    private int channelCreator = 2;
-
-    @SerializedName("channel-admin-id")
-    private int channelAdminId = 5;
-
-    @SerializedName("child-channels")
-    private int childChannels = 3;
+    @SerializedName("groups")
+    private Map<String, Integer> groups = new HashMap<>();
+    {
+        groups.put("Name 1", 1);
+        groups.put("Name 2", 2);
+        groups.put("Name 3", 3);
+    }
 
     public String getIp()
     {
@@ -61,23 +63,13 @@ public class Configuration
         return name;
     }
 
-    public int getParentChannelId()
+    public int getChannel()
     {
-        return parentChannelId;
+        return channel;
     }
 
-    public int getChannelCreator()
+    public Map<String, Integer> getGroups()
     {
-        return channelCreator;
-    }
-
-    public int getChildChannels()
-    {
-        return childChannels;
-    }
-
-    public int getChannelAdminId()
-    {
-        return channelAdminId;
+        return groups;
     }
 }
